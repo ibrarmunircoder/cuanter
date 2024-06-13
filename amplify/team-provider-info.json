@@ -1,0 +1,20 @@
+{
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cuanter-prod-cd243-authRole",
+      "UnauthRoleArn": "arn:aws:iam::212446767488:role/amplify-cuanter-prod-cd243-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::212446767488:role/amplify-cuanter-prod-cd243-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-cuanter-prod-cd243-deployment",
+      "UnauthRoleName": "amplify-cuanter-prod-cd243-unauthRole",
+      "StackName": "amplify-cuanter-prod-cd243",
+      "StackId": "arn:aws:cloudformation:us-east-1:212446767488:stack/amplify-cuanter-prod-cd243/d703dea0-28c8-11ef-8331-12c0566bb2bb",
+      "AmplifyAppId": "d1et3uskox00aq"
+    },
+    "categories": {
+      "auth": {
+        "cuantera460b2aaa460b2aa": {}
+      }
+    }
+  }
+}
