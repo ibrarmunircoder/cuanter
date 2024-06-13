@@ -2,7 +2,7 @@ import { fetchAuthSession } from 'aws-amplify/auth/server';
 import { NextRequest, NextResponse } from 'next/server';
 import { runWithAmplifyServerContext } from '@/app/amplify-server-utils';
 
-const publicRoutes = ['/', '/sign-in', '/sign-up'];
+const publicRoutes = ['/', '/sign-in', '/sign-up', '/reset-password'];
 
 export async function middleware(request: NextRequest) {
   try {
