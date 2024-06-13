@@ -1,5 +1,6 @@
 import React from 'react';
 import { PasswordResetSteps } from './components/PasswordResetSteps';
+import Link from 'next/link';
 
 const ResetPassword = () => {
   return (
@@ -7,6 +8,9 @@ const ResetPassword = () => {
       <div className="w-full max-w-md shadow-xl rounded-lg p-5">
         <h1 className="text-2xl font-semibold text-center">Reset Password</h1>
         <PasswordResetSteps />
+        <div className="flex flex-col items-center text-base mt-4 text-blue-400">
+          <Link href="/sign-in">Back to Sign in</Link>
+        </div>
       </div>
     </main>
   );
