@@ -27,7 +27,6 @@ import {
   useSignupFormCurrentStep,
   useSignupFormStoreActions,
 } from '../hooks/useSignupForm';
-import { SignupSteps } from '@/lib/enums';
 
 export const UserInfoForm = () => {
   const currentStep = useSignupFormCurrentStep();

@@ -20,6 +20,7 @@ export async function middleware(request: NextRequest) {
         }
       },
     });
+
     if (!userSession) {
       return NextResponse.redirect(new URL('/', request.url));
     }
