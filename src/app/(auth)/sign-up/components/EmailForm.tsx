@@ -59,7 +59,13 @@ export const EmailForm = () => {
           <Link href="#">politica sulla privacy</Link>
         </p>
 
-        <Button className="w-full" type="submit">
+        <Button
+          data-amplify-analytics-on="click"
+          data-amplify-analytics-name="Next"
+          data-amplify-analytics-attrs="signup_step:1,step_name:Email form"
+          className="w-full"
+          type="submit"
+        >
           Next
         </Button>
       </form>

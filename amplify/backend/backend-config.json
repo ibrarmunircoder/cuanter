@@ -1,4 +1,10 @@
 {
+  "analytics": {
+    "cuanter": {
+      "providerPlugin": "awscloudformation",
+      "service": "Pinpoint"
+    }
+  },
   "auth": {
     "cuantera460b2aaa460b2aa": {
       "customAuth": false,

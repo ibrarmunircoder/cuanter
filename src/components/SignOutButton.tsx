@@ -13,7 +13,12 @@ const SignOutButton = () => {
     router.replace('/sign-in');
   };
   return (
-    <Button onClick={handleSignOut} variant="ghost">
+    <Button
+      data-amplify-analytics-on="click"
+      data-amplify-analytics-name="Sign Out"
+      onClick={handleSignOut}
+      variant="ghost"
+    >
       Sign Out
     </Button>
   );

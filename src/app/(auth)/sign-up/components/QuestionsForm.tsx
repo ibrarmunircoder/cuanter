@@ -189,6 +189,9 @@ export const QuestionsForm = () => {
         />
 
         <Button
+          data-amplify-analytics-on="click"
+          data-amplify-analytics-name="Next"
+          data-amplify-analytics-attrs="signup_step:3,step_name:Question form"
           disabled={form.formState.isSubmitting}
           className="w-full"
           type="submit"

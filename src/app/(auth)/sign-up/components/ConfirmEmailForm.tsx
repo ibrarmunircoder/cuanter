@@ -13,12 +13,18 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { SignupConfirmEmailSchema } from '@/lib/validations';
-import { autoSignIn, confirmSignUp, resendSignUpCode } from 'aws-amplify/auth';
+import {
+  autoSignIn,
+  confirmSignUp,
+  getCurrentUser,
+  resendSignUpCode,
+} from 'aws-amplify/auth';
 import { useToast } from '@/components/ui/use-toast';
 import { useSignupFormState } from '../hooks/useSignupForm';
 import { useRouter } from 'next/navigation';
 import { formatErrorMessage } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
+import { identifyUser } from 'aws-amplify/analytics';
 
 export const ConfirmEmailForm = () => {
   const router = useRouter();
@@ -39,6 +45,13 @@ export const ConfirmEmailForm = () => {
       });
       if (isSignUpComplete) {
         await autoSignIn();
+        const user = await getCurrentUser();
+        await identifyUser({
+          userId: user.userId,
+          userProfile: {
+            email: signupFormState.email!,
+          },
+        });
         router.replace('/');
       }
     } catch (error: any) {
@@ -104,6 +117,9 @@ export const ConfirmEmailForm = () => {
             Resend Code
           </Button>
           <Button
+            data-amplify-analytics-on="click"
+            data-amplify-analytics-name="Next"
+            data-amplify-analytics-attrs="signup_step:4,step_name:Confirm Email"
             disabled={form.formState.isSubmitting}
             className="w-full"
             type="submit"

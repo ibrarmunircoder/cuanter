@@ -138,7 +138,13 @@ export const UserInfoForm = () => {
           <Link href="#">politica sulla privacy</Link>
         </p>
 
-        <Button className="w-full" type="submit">
+        <Button
+          data-amplify-analytics-on="click"
+          data-amplify-analytics-name="Next"
+          data-amplify-analytics-attrs="signup_step:2,step_name:User info form"
+          className="w-full"
+          type="submit"
+        >
           Next
         </Button>
       </form>

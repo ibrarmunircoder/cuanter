@@ -15,10 +15,11 @@ import { useForm } from 'react-hook-form';
 import { SigninSchema } from '@/lib/validations';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { signIn } from 'aws-amplify/auth';
+import { getCurrentUser, signIn } from 'aws-amplify/auth';
 import { useToast } from '@/components/ui/use-toast';
 import { formatErrorMessage } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
+import { identifyUser } from 'aws-amplify/analytics';
 
 export const SigninForm = () => {
   const { toast } = useToast();
@@ -36,6 +37,13 @@ export const SigninForm = () => {
       await signIn({
         username: values.email,
         password: values.password,
+      });
+      const user = await getCurrentUser();
+      await identifyUser({
+        userId: user.userId,
+        userProfile: {
+          email: values.email,
+        },
       });
       router.replace('/');
     } catch (error: any) {

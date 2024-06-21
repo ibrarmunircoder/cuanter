@@ -1,0 +1,21 @@
+{
+    "appName": "cuanter",
+    "roleName": "pinpointLambdaRole550c4839",
+    "cloudformationPolicyName": "cloudformationPolicy550c4839",
+    "cloudWatchPolicyName": "cloudWatchPolicy550c4839",
+    "pinpointPolicyName": "pinpointPolicy550c4839",
+    "authPolicyName": "pinpoint_amplify_550c4839",
+    "unauthPolicyName": "pinpoint_amplify_550c4839",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}
